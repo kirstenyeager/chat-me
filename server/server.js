@@ -12,10 +12,20 @@ var io = socketIO(server);
 
 app.use(express.static(publicPath));
 
+io.on('connection', (socket) => {
+	console.log('New user connected');
+	
+	socket.on('disconnect', () => {
+		console.log('User disconnected');
+	});
+});
+
+
+
 // app.get('/', () => {
 // 	console.log('hello');
 // })
 
-app.listen(port, () => {
+server.listen(port, () => {
 	console.log(`listening on ${port}`);
 });
