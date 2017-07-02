@@ -1,3 +1,4 @@
+const {generateMessage} = require('./utils/message');
 var socket = io();
 
 socket.on('connect', function () {
@@ -11,3 +12,5 @@ socket.on('disconnect', function () {
 socket.on('newMessage', function (message) {
   console.log('newMessage', message);
 });
+
+socket.emit('createMessage', generateMessage('user1', 'hello there'));
