@@ -10,8 +10,19 @@
 <h3>Chat-Me-Wow</h3>
 <p>Nobody here yet, but you and me</p>
 <img src="/img/minion.png" />
+<ul id="messages"></ul>
+
+<form id="message-form">
+<input name="message" type="text" placeholder="Message"/>
+
+<button>Send</button>
+</form>
+
+
+
 <script src="/socket.io/socket.io.js"></script>
+<script src="/js/libs/jquery-3.2.1.min.js"></script>
 <script src="/js/index.js"></script>
-<div id="message"></div>
+
 </body>
 </html>
